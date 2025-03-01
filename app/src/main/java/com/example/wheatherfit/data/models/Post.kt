@@ -11,5 +11,6 @@ data class Post(
   val timestamp: Long = 0,
   val weather: Double = 0.0,
   var likes: Int = 0,
-  val likedUsers: MutableList<String> = mutableListOf()
+  val likedUsers: MutableList<String> = mutableListOf(),
+  var comments: MutableList<Comment> = mutableListOf()
 ) : Serializable
