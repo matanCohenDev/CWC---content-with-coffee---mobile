@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "696047973358",
+    "project_id": "wheatherfit",
+    "storage_bucket": "wheatherfit.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696047973358:android:58b95561e9d24f9e3c14ff",
+        "android_client_info": {
+          "package_name": "com.example.wheatherfit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkd_nhG8kPtpeU6_rTD1LadSC-9z2_qlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
