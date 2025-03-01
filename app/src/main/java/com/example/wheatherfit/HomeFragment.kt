@@ -117,4 +117,10 @@ class HomeFragment : Fragment() {
 
     return view
   }
+
+  override fun onResume() {
+    super.onResume()
+    Log.d("HomeFragment", "onResume")
+    fetchPosts()
+  }
 }

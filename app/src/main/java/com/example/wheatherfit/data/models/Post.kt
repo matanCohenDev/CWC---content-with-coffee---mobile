@@ -1,6 +1,7 @@
 package com.example.wheatherfit.data.models
 
 import com.google.firebase.firestore.DocumentId
+import java.io.Serializable
 
 data class Post(
   @DocumentId val id: String = "",
@@ -11,4 +12,4 @@ data class Post(
   val weather: Double = 0.0,
   var likes: Int = 0,
   val likedUsers: MutableList<String> = mutableListOf()
-)
+) : Serializable

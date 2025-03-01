@@ -12,10 +12,14 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.wheatherfit.R
+import com.example.wheatherfit.activities.EditPostActivity
 import com.example.wheatherfit.data.models.Post
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
+import android.content.Intent
+import android.util.Log
+
 
 class ProfilePostAdapter(private val postList: List<Post>, private val context: Context) :
   RecyclerView.Adapter<ProfilePostAdapter.ProfilePostViewHolder>() {
@@ -28,6 +32,7 @@ class ProfilePostAdapter(private val postList: List<Post>, private val context: 
     val likeCount: TextView = view.findViewById(R.id.like_count_profile)
     val postProfilePicture: ImageView = view.findViewById(R.id.profile_picture_in_post_profile)
     val deletePost: Button = view.findViewById(R.id.delete_button)
+    val editButton: Button = view.findViewById(R.id.edit_button)
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfilePostViewHolder {
@@ -38,6 +43,13 @@ class ProfilePostAdapter(private val postList: List<Post>, private val context: 
   override fun onBindViewHolder(holder: ProfilePostViewHolder, position: Int) {
     val post = postList[position]
     val currentUser = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+
+    holder.editButton.setOnClickListener {
+      val intent = Intent(context, EditPostActivity::class.java)
+      intent.putExtra("post", post)
+      context.startActivity(intent)
+      Log.d("ProfilePostAdapter", "Edit button clicked")
+    }
 
     // טעינת תמונת הפוסט
     Glide.with(holder.itemView.context)
